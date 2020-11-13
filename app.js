@@ -3,6 +3,9 @@ const express = require('express');
 // express app
 const app = express();
 
+require('./db/mongoose')
+const taskRouter = require('./routers/task')
+
 const port = process.env.PORT
 
 // listen for requests

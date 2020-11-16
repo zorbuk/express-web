@@ -5,17 +5,17 @@
   <%- include("./partials/nav.ejs") %>
 
   <div class="blogs content">
-    <h2>All Blogs</h2>
+    <h2>Todas las tortugas</h2>
 
-    <% if (blogs.length > 0) { %>
-      <% blogs.forEach(blog => { %>
+    <% if (turtles.length > 0) { %>
+      <% turtles.forEach(blog => { %>
 
-        <h3 class="title"><%= blog.title %></h3>
-        <p class="snippet"><%= blog.snippet %></p>
+        <h3 class="title"><%= turtles.name %></h3>
+        <p class="snippet"><%= turtles.type %></p>
 
       <% }) %>
     <% } else { %>
-      <p>There are no blogs to display...</p>
+      <p>¡No hay tortugas!</p>
     <% } %>
     
   </div>

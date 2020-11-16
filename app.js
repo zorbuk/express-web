@@ -5,6 +5,7 @@ const app = express();
 
 require('./db/mongoose')
 const taskRouter = require('./routers/task')
+const taskTurtle = require('./turtles/task')
 
 const port = process.env.PORT
 
@@ -30,45 +31,19 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 console.log('request: ',req.url,req.method,req.path)
-  const blogs = [
-    {title: 'Pastel de zanahoria', snippet: 'Lorem ipsum dolor sit amet consectetur'},
-    {title: 'Zhulien de champiñones', snippet: 'Lorem ipsum dolor sit amet consectetur'},
-    {title: 'Shakshuka', snippet: 'Lorem ipsum dolor sit amet consectetur'},
-  ];
-  res.render('index', { title: 'Home', blogs });
+  await taskTurtle.findAll()
+    .then( (data) => {
+        res.render('index', { title: 'Home', turtles: '', playlistSearchResult: data })
+    });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', { title: 'About' });
+app.get('/imagenes', (req, res) => {
+  res.render('imagenes', { title: 'Imagenes' });
 });
 
-app.get('/novedades', (req, res) => {
-  res.render('novedades', {title: 'Novedades'});
+app.get('/contacto', (req, res) => {
+  res.render('contacto', {title: 'Contacto'});
 })
-
-app.get('/numeros', (req, res) => {
-  res.render('numeros', {title: 'Numeros'});
-})
-
-app.get('/limones', (req, res) => {
-  res.render('limones', {title: 'Limones'});
-})
-
-app.get('/blogs/create', (req, res) => {
-  res.render('create', { title: 'Create a new blog' });
-});
-
-app.get('/canciones', (req, res) => {
-  res.render('canciones', { title: '' });
-});
-
-app.get('/cantos', (req, res) => {
-  res.render('cantos', { title: '' });
-});
-
-app.get('/canticos', (req, res) => {
-  res.render('canticos', { title: '' });
-});
 
 // 404 page
 app.use((req, res) => {

@@ -3,6 +3,8 @@ const express = require('express');
 // express app
 const app = express();
 
+const Turtle = require('./models/turtle')
+
 require('./db/mongoose')
 const taskRouter = require('./routers/task')
 const turtleRouter = require('./routers/turtle')
@@ -19,6 +21,8 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+app.use(express.json()); // Parse JSON bodies
 
 app.use((req, res, next) => {
   console.log('new request made:');
@@ -30,21 +34,9 @@ app.use((req, res, next) => {
 
 
 app.get('/', async (req, res) => {
-  console.log('request: ', req, res)
-  if(turtleRouter.keys(req.query).length > 0){
-    if('url' in req.query) {
-      app.locals.turtleRouter = req.query.url;
-      res.render('index', { title: 'Home', turtles: data });
-      return;
-    }
-  }
-
-  res.render('index', { title: 'Home', turtles: '' })
-
-  //await Turtle.find().then( (data) => {
-        //res.render('index', { title: 'Home', turtles: data })
-    //});
-    //res.render('index', { title: 'Home', turtles: {} })
+  await Turtle.find({}).then((data) => {
+        res.render('index', { title: 'Home', turtles: data })
+    });
 });
 
 app.get('/imagenes', (req, res) => {

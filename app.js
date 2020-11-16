@@ -31,10 +31,11 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 console.log('request: ', req, res)
-  await Turtle.findAll()
+  /*await Turtle.findAll()
     .then( (data) => {
         res.render('index', { title: 'Home', turtles: data })
-    });
+    });*/
+    res.render('index', { title: 'Home', turtles: {} })
 });
 
 app.get('/imagenes', (req, res) => {

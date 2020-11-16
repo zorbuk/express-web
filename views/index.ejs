@@ -10,7 +10,7 @@
     <% if (turtles.length > 0) { %>
       <% turtles.forEach(turtle => { %>
 
-        <li>La tortuga <%= turtle.name %> es del tipo <%= turtle.type %>.</li>
+        <li><b><%= turtle.name %></b> es del tipo <u><%= turtle.type %></u>.</li>
 
       <% }) %>
     <% } else { %>

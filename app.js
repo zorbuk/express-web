@@ -5,7 +5,7 @@ const app = express();
 
 require('./db/mongoose')
 const taskRouter = require('./routers/task')
-const taskTurtle = require('./turtles/task')
+const taskTurtle = require('./routers/turtle')
 
 const port = process.env.PORT
 
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 console.log('request: ', req, res)
   await Turtle.findAll()
     .then( (data) => {
-        res.render('index', { title: 'Home', turtles: '', playlistSearchResult: data })
+        res.render('index', { title: 'Home', turtles: data })
     });
 });
 

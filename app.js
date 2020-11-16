@@ -3,10 +3,8 @@ const express = require('express');
 // express app
 const app = express();
 
-const Turtle = require('./models/turtle')
-
 require('./db/mongoose')
-const taskRouter = require('./routers/task')
+const Turtle = require('./models/turtle')
 const turtleRouter = require('./routers/turtle')
 
 const port = process.env.PORT || 3000

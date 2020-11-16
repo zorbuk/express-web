@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 app.get('/', async (req, res) => {
   console.log('request: ', req, res)
-  if(Object.keys(req.query).length > 0){
+  if(turtleRouter.keys(req.query).length > 0){
     if('url' in req.query) {
       app.locals.turtleRouter = req.query.url;
       res.render('index', { title: 'Home', turtles: data });

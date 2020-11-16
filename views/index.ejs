@@ -6,18 +6,17 @@
 
   <div class="blogs content">
     <h2>Todas las tortugas</h2>
-
+  <ol>
     <% if (turtles.length > 0) { %>
       <% turtles.forEach(turtle => { %>
 
-        <h3 class="title"><%= turtle.name %></h3>
-        <p class="snippet">Es del tipo <%= turtle.type %>.</p>
+        <li>La tortuga <%= turtle.name %> es del tipo <%= turtle.type %>.</li>
 
       <% }) %>
     <% } else { %>
       <p>¡No hay tortugas!</p>
     <% } %>
-    
+  </ol>
   </div>
 
   <%- include("./partials/footer.ejs") %>

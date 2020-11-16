@@ -40,7 +40,7 @@ router.get('/turtles/:id', async (req, res) => {
 
 router.patch('/turtles/:id', async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['description', 'completed']
+    const allowedUpdates = ['name', 'type', 'image']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {

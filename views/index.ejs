@@ -8,10 +8,10 @@
     <h2>Todas las tortugas</h2>
 
     <% if (turtles.length > 0) { %>
-      <% turtles.forEach(blog => { %>
+      <% turtles.forEach(turtle => { %>
 
-        <h3 class="title"><%= turtles.name %></h3>
-        <p class="snippet"><%= turtles.type %></p>
+        <h3 class="title"><%= turtle.name %></h3>
+        <p class="snippet"><%= turtle.type %></p>
 
       <% }) %>
     <% } else { %>

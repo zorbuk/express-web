@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
     });
 });
 
-app.get('/imagenes', (req, res) => {
+app.get('/imagenes', async (req, res) => {
   await Turtle.find({}).then((data) => {
     res.render('imagenes', { title: 'Imagenes', turtles: data })
 });

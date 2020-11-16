@@ -1,5 +1,5 @@
 const express = require('express')
-const Turtle = require('../models/task')
+const Turtle = require('../models/turtle')
 const router = new express.Router()
 
 router.post('/turtles', async (req, res) => {

@@ -10,7 +10,7 @@
       <% turtles.forEach(turtle => { %>
           
         <li class="imgFlex">
-            <img class="imgFlex" src="<%= turtle.image %>">
+            <img title="Imágen de <%= turtle.name %>, una tortuga del tipo <%= turtle.type %>." class="imgFlex" src="<%= turtle.image %>">
         </li>
 
       <% }) %>

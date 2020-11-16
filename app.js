@@ -45,6 +45,9 @@ app.get('/contacto', (req, res) => {
   res.render('contacto', {title: 'Contacto'});
 })
 
+// routing
+app.use('/api', turtleRouter);
+
 // 404 page
 app.use((req, res) => {
   res.status(404).render('404', { title: '404' });

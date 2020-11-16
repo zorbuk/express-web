@@ -1,0 +1,28 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+
+        <p class="snippet">
+            <form action="/api/turtles" method="POST">
+                <fieldset>
+                    <legend>¿Conoces alguna otra tortuga?</legend>
+                    <label for="name">Nombre de Tortuga:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="type">Tipo de Tortuga:</label>
+                    <input type="text" name="type" id="type">
+                    <label for="image">Imagen (.png, .jpg...):</label>
+                    <input type="text" name="image" id="image">
+                    <input type="submit" value="Publicar otra tortuga">
+                </fieldset>
+            </form>
+        </p>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

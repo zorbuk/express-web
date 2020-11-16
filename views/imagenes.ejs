@@ -5,18 +5,19 @@
   <%- include("./partials/nav.ejs") %>
 
   <div class="blogs content">
+        <ul class="imgFlex">
     <% if (turtles.length > 0) { %>
       <% turtles.forEach(turtle => { %>
-
-        <p class="snippet">
-            <img src="<%= turtle.image %>">
-        </p>
+          
+        <li class="imgFlex">
+            <img class="imgFlex" src="<%= turtle.image %>">
+        </li>
 
       <% }) %>
     <% } else { %>
       <p>¡No hay imagenes!</p>
     <% } %>
-    
+    </ul>
   </div>
 
   <%- include("./partials/footer.ejs") %>

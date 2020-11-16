@@ -86,3 +86,24 @@
       font-size: 1.2em;
       cursor: pointer;
     }
+
+    ul.imgFlex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    li.imgFlex {
+      height: 40vh;
+      flex-grow: 1;
+    }
+    
+    img.imgFlex {
+      max-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+
+    li.imgFlex:last-child {
+      flex-grow: 10;
+    }

@@ -5,17 +5,19 @@
   <%- include("./partials/nav.ejs") %>
 
   <div class="blogs content">
-    <h2>Todas las tortugas</h2>
-
     <% if (turtles.length > 0) { %>
       <% turtles.forEach(turtle => { %>
 
         <h3 class="title"><%= turtle.name %></h3>
-        <p class="snippet"><img src=`<%= turtle.image %>`></img><%= turtle.type %></p>
+        <p class="snippet">
+            <%= 
+            turtle.image
+            %>
+        <%= turtle.type %></p>
 
       <% }) %>
     <% } else { %>
-      <p>¡No hay tortugas!</p>
+      <p>¡No hay imagenes!</p>
     <% } %>
     
   </div>

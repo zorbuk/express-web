@@ -8,10 +8,9 @@
     <% if (turtles.length > 0) { %>
       <% turtles.forEach(turtle => { %>
 
-        <h3 class="title"><%= turtle.name %></h3>
         <p class="snippet">
             <img src="<%= turtle.image %>">
-        <%= turtle.type %></p>
+        </p>
 
       <% }) %>
     <% } else { %>

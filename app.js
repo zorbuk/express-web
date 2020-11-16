@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 console.log('request: ', req, res)
-  await taskTurtle.findAll()
+  await Turtle.findAll()
     .then( (data) => {
         res.render('index', { title: 'Home', turtles: '', playlistSearchResult: data })
     });

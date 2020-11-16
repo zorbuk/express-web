@@ -7,7 +7,7 @@ require('./db/mongoose')
 const taskRouter = require('./routers/task')
 const taskTurtle = require('./routers/turtle')
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 // listen for requests
 app.listen(port, ()=>{
